@@ -8,7 +8,6 @@ export const productSlice = createSlice({
     error: false,
   },
   reducers: {
-      
     // GET ALL PRODUCTS
     getProductStart: (state) => {
       state.isFetching = true;

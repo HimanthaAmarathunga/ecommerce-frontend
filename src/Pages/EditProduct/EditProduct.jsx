@@ -1,44 +1,45 @@
-import React, { useEffect, useState } from "react";
-import "../AddProduct/AddProduct.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import Header from "../../Components/Header/Header";
-import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Header from "../../Components/Header/Header";
+import "../AddProduct/AddProduct.css";
 
 export default function EditProduct() {
   const navigate = useNavigate();
-  // const [id, setID] = useState(null);
-  const[sku, setSku] = useState('');
-  const[productName, setProductName] = useState('');
-  const[quantity, setQuantity] = useState('');
-  const[productDescription, setProductDescription] = useState('');
-  const[category, setCategory] = useState('');
-  const[price, setPrice] = useState('');
+  const [sku, setSku] = useState("");
+  const [productName, setProductName] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
 
   useEffect(() => {
-    // setID(localStorage.getItem('ID'))
-    setSku(localStorage.getItem('SKU'))
-    setProductName(localStorage.getItem('PRODUCT NAME'))
-    setQuantity(localStorage.getItem('QUANTITY'))
-    setProductDescription(localStorage.getItem('PRODUCT DESCRIPTION'))
-    setCategory(localStorage.getItem('CATEGORY'))
-    setPrice(localStorage.getItem('PRICE'))
+    setSku(localStorage.getItem("SKU"));
+    setProductName(localStorage.getItem("PRODUCT NAME"));
+    setQuantity(localStorage.getItem("QUANTITY"));
+    setProductDescription(localStorage.getItem("PRODUCT DESCRIPTION"));
+    setCategory(localStorage.getItem("CATEGORY"));
+    setPrice(localStorage.getItem("PRICE"));
   }, []);
 
+// UPDATE API
+
   const onSubmit = (_id) => {
-    axios.put("http://localhost:5000/api/products/" +_id, {
-      sku,
-      productName,
-      quantity,
-      productDescription,
-      category,
-      price
-    }).then(() => {
-      navigate('/');
-    })
-  }
+    axios
+      .put("http://localhost:5000/api/products/" + _id, {
+        sku,
+        productName,
+        quantity,
+        productDescription,
+        category,
+        price,
+      })
+      .then(() => {
+        navigate("/");
+      });
+  };
 
   return (
     <div className="addProducts">
@@ -55,7 +56,6 @@ export default function EditProduct() {
           </p>
         </div>
         <div className="addProduct-form">
-
           {/* Update Product form */}
           <form>
             <div className="mb-3 row">
@@ -165,7 +165,16 @@ export default function EditProduct() {
               </div>
             </div>
 
-           <Link to={'/'}> <button type="submit" onClick={onSubmit} className="AddProductButton">Save Changes</button></Link>
+            <Link to={"/"}>
+              {" "}
+              <button
+                type="submit"
+                onClick={onSubmit}
+                className="AddProductButton"
+              >
+                Save Changes
+              </button>
+            </Link>
           </form>
         </div>
       </div>

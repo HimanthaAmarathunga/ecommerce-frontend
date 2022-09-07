@@ -1,51 +1,46 @@
-import {React, useEffect, componentDidMount, useState} from "react";
-import Header from "../../Components/Header/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPen, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starIcon } from "@fortawesome/free-regular-svg-icons";
-import './ProductList.css';
-import SearchBar from "../../Components/SearchBar/SearchBar";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct, getProducts } from "../../Redux/apiCalls";
-import { Link, useParams } from "react-router-dom";
+import { faPen, faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { publicRequest } from "../../requestMethods";
-import Swal from 'sweetalert2';
+import { React, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import Header from "../../Components/Header/Header";
+import SearchBar from "../../Components/SearchBar/SearchBar";
+import "./ProductList.css";
 
 export default function ProductList() {
-  const [APIdata, setAPIData] = useState([])
+  const [APIdata, setAPIData] = useState([]);
   const dispatch = useDispatch();
-  // const products = useSelector((state) => state.product.products);
-  // const [inputs, setInputs] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
-    .then((response) => {
+    axios.get("http://localhost:5000/api/products").then((response) => {
       console.log(response.data);
-      setAPIData(response.data)
-    })
-  },[]);
+      setAPIData(response.data);
+    });
+  }, []);
 
   const setData = (data) => {
-    let { sku, productName, quantity, productDescription, category, price } = data;
-    localStorage.setItem('SKU', sku);
-    localStorage.setItem('PRODUCT NAME', productName);
-    localStorage.setItem('QUANTITY', quantity);
-    localStorage.setItem('PRODUCT DESCRIPTION', productDescription);
-    localStorage.setItem('CATEGORY', category);
-    localStorage.setItem('PRICE', price);
-  }
+    let { sku, productName, quantity, productDescription, category, price } =
+      data;
+    localStorage.setItem("SKU", sku);
+    localStorage.setItem("PRODUCT NAME", productName);
+    localStorage.setItem("QUANTITY", quantity);
+    localStorage.setItem("PRODUCT DESCRIPTION", productDescription);
+    localStorage.setItem("CATEGORY", category);
+    localStorage.setItem("PRICE", price);
+  };
 
-  // const handleDelete = (id) => {
-  //   deleteProduct(id, dispatch);
-  // };
+// GET PRODUCT LIST API
 
   const getData = () => {
-    axios.get("http://localhost:5000/api/products")
-    .then((getData) => {
-      setAPIData(getData.data)
-    })
-  }
+    axios.get("http://localhost:5000/api/products").then((getData) => {
+      setAPIData(getData.data);
+    });
+  };
+
+// DELETE API
 
   const onDelete = (_id) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -75,20 +70,20 @@ export default function ProductList() {
             "Item has been deleted",
             "success"
           );
-    axios.delete("http://localhost:5000/api/products/" + _id)
-    .then(() => {
-      getData();
-    })
-  }else if (result.dismiss === Swal.DismissReason.cancel) {
-    swalWithBootstrapButtons.fire("Cancelled");
-  }
-});
-}
+          axios.delete("http://localhost:5000/api/products/" + _id).then(() => {
+            getData();
+          });
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire("Cancelled");
+        }
+      });
+  };
 
   const changeIcon = (icon) => {
-    this.setState(<FontAwesomeIcon icon={faStar} className="fontawesomeicons"/>)
-  }
-
+    this.setState(
+      <FontAwesomeIcon icon={faStar} className="fontawesomeicons" />
+    );
+  };
 
   return (
     <div className="productList">
@@ -100,7 +95,7 @@ export default function ProductList() {
           <div className="primary-titles">PRODUCTS</div>
         </div>
         <div className="searchSection">
-          <SearchBar/>
+          <SearchBar />
         </div>
         <div className="product-list-table">
           <table className="table">
@@ -115,20 +110,44 @@ export default function ProductList() {
             </thead>
             <tbody>
               {APIdata.map((data) => {
-
-              return (
-              <tr>
-                <th scope="row" className="sku-style">{data.sku}</th>
-                <td>Mark</td>
-                <td>{data.productName}</td>
-                <td>${data.price}.00</td>
-                <td> <Link to={"/"}><FontAwesomeIcon icon={faTrash} onClick={() => onDelete(data._id)} className="fontawesomeicons" /></Link>
-                <Link to={"/editProduct"}><FontAwesomeIcon icon={faPen} onClick={() => setData(data)} className="fontawesomeicons" /></Link>
-               <Link to={"/"}><FontAwesomeIcon icon={starIcon} onClick={() => changeIcon(this)} className="fontawesomeicons"/></Link>
-               <FontAwesomeIcon icon={faStar} className="fontawesomeicons"/>
-                </td> 
-              </tr>
-              )
+                return (
+                  <tr>
+                    <th scope="row" className="sku-style">
+                      {data.sku}
+                    </th>
+                    <td>Mark</td>
+                    <td>{data.productName}</td>
+                    <td>${data.price}.00</td>
+                    <td>
+                      {" "}
+                      <Link to={"/"}>
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          onClick={() => onDelete(data._id)}
+                          className="fontawesomeicons"
+                        />
+                      </Link>
+                      <Link to={"/editProduct"}>
+                        <FontAwesomeIcon
+                          icon={faPen}
+                          onClick={() => setData(data)}
+                          className="fontawesomeicons"
+                        />
+                      </Link>
+                      <Link to={"/"}>
+                        <FontAwesomeIcon
+                          icon={starIcon}
+                          onClick={() => changeIcon(this)}
+                          className="fontawesomeicons"
+                        />
+                      </Link>
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="fontawesomeicons"
+                      />
+                    </td>
+                  </tr>
+                );
               })}
             </tbody>
           </table>

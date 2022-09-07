@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./AddProduct.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Header from "../../Components/Header/Header";
 // import { addProductSuccess } from "../../Redux/productSlice";
 import { addProduct } from "../../Redux/apiCalls";
+import "./AddProduct.css";
 
 export default function AddProduct({ history }) {
   const dispatch = useDispatch();
@@ -30,6 +30,8 @@ export default function AddProduct({ history }) {
   //     }
   // }, [history, productInfo]);
 
+// MAPPING FORM ITEMS
+
   const handleChange = (e) => {
     setInputs((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
@@ -37,10 +39,10 @@ export default function AddProduct({ history }) {
   };
 
   const handlePhoto = (e) => {
-      setInputs((prev) => {
-          return({ ...prev, image: e.target.files[0]})
-      })
-  }
+    setInputs((prev) => {
+      return { ...prev, image: e.target.files[0] };
+    });
+  };
 
   // const handleValues = (e) => {
   //     setValues(e.target.value.split(","));
@@ -55,14 +57,13 @@ export default function AddProduct({ history }) {
   // addProduct(product, dispatch);
   // }
 
-//   const uploadTask = inputs
+  //   const uploadTask = inputs
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+
     const product = { inputs };
     console.log(product);
     addProduct(product, dispatch);
-    
   };
 
   return (
@@ -81,8 +82,7 @@ export default function AddProduct({ history }) {
         </div>
         <div className="addProduct-form">
           {/* Add Product form */}
-          {/* onSubmit={handleSubmit} */}
-          <form >
+          <form>
             <div className="mb-3 row">
               <label className="col-sm-1 primary-text-med">SKU</label>
               <div className="col-sm-3">
@@ -92,8 +92,6 @@ export default function AddProduct({ history }) {
                   id="sku"
                   name="SKU"
                   required
-                  //   value={sku}
-                  //   onChange={(e) => setSku(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -107,8 +105,6 @@ export default function AddProduct({ history }) {
                   id="productName"
                   name="Name"
                   required
-                  //   value={productName}
-                  //   onChange={(e) => setProductName(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -121,8 +117,6 @@ export default function AddProduct({ history }) {
                   id="quantity"
                   name="Qty"
                   required
-                  //   value={quantity}
-                  //   onChange={(e) => setQuantity(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -141,8 +135,6 @@ export default function AddProduct({ history }) {
                   id="productDescription"
                   name="Product Description"
                   required
-                  //   value={productDescription}
-                  //   onChange={(e) => setProductDescription(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -156,8 +148,6 @@ export default function AddProduct({ history }) {
                   id="category"
                   name="Category"
                   required
-                  //   value={category}
-                  //   onChange={(e) => setCategory(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -172,8 +162,6 @@ export default function AddProduct({ history }) {
                   id="price"
                   name="Price"
                   required
-                  //   value={price}
-                  //   onChange={(e) => setPrice(e.target.value)}
                   onChange={handleChange}
                 />
               </div>
@@ -192,9 +180,7 @@ export default function AddProduct({ history }) {
                   accept="image/*"
                   id="image"
                   name="Image"
-                //   value={values.image}
-                //   onChange={(e) => setValues({ ...values, image: e.target.value})}
-                onChange={handlePhoto}
+                  onChange={handlePhoto}
                 />
               </div>
             </div>
