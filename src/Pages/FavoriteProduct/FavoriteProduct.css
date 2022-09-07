@@ -1,0 +1,66 @@
+.fav-primary-titles {
+    position: absolute;
+    width: 500px;
+    height: 49px;
+    margin-left: 220px;
+    margin-top: -30px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 49px;
+    letter-spacing: 0.15em;
+  }
+  
+  .favoriteProducts {
+    font-family: "Satoshi";
+  }
+  
+  .fav-product-list-table {
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    margin-left: 15%;
+    top: 244px;
+  }
+  
+  .fav-table-heading {
+    color: #001eb9;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 26px;
+  }
+  
+  .sku-style {
+    font-family: "Satoshi";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 26px;
+    color: #162427;
+    opacity: 0.5;
+  }
+  
+  td {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 26px;
+    color: #162427;
+  }
+  
+  .starIcon {
+    background-color: aliceblue;
+    border-color: black;
+  }
+  
+  .fontawesomeicons {
+    color: #001eb9;
+    margin-left: 20px;
+  }
+  
+  .searchSection {
+      position: absolute;
+      margin-top: 60px;
+      margin-left: 220px;
+  }

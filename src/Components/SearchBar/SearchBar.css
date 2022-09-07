@@ -1,0 +1,91 @@
+.searchButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 40px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 180px;
+    height: 45px;
+    left: 561px;
+    top: 10px;
+    background: #001eb9;
+    border-radius: 80px;
+  
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 26px;
+    color: #f7f7f7;
+  }
+  
+  .search-Section {
+    position: absolute;
+    width: 757px;
+    height: 64px;
+    margin-left: 0px;
+    top: 0px;
+    font-size: 19px;
+    background-color: #f7f7f7;
+    border-radius: 50px;
+    border-color: #f7f7f7;
+    border-width: 0;
+  }
+  
+  .search-product {
+    font-family: "Satoshi";
+  }
+  
+  .newProduct {
+    padding-left: 800px;
+  }
+  
+  .new-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 217px;
+    height: 56px;
+    left: 930px;
+    top: 4px;
+    background: #001eb9;
+    border-radius: 10px;
+  
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 26px;
+    color: #f7f7f7;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .favoriteProducts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 45px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 60px;
+    height: 56px;
+    left: 1160px;
+    top: 4px;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+  
+  .favIcon {
+    color: #001eb9;
+  }
+  

@@ -1,0 +1,19 @@
+.profileIcon {
+  width: 58px;
+  height: 58px;
+  margin-top: 33px;
+  margin-left: 1395px;
+  margin-right: 90px;
+  color: #001eb9;
+}
+
+.Header-section {
+  position: absolute;
+  font-family: "Satoshi";
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25.65px;
+  padding-top: 50px;
+  margin-left: 1270px;
+}
+

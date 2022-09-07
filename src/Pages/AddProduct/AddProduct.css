@@ -1,0 +1,101 @@
+.addProductSubHeading {
+  color: #001eb9;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.08em;
+  text-decoration: none !important;
+}
+
+.primary-titles {
+  position: absolute;
+  width: 500px;
+  height: 49px;
+  margin-left: 220px;
+  top: 146px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.15em;
+}
+.addProduct-form {
+  position: absolute;
+  width: 80%;
+  height: 600px;
+  margin-left: 15%;
+  top: 244px;
+}
+
+.AddProductButton {
+  width: 249px;
+  color: #ffffff;
+  background-color: #001eb9;
+  height: 56px;
+  border-radius: 10px;
+  font-size: 19px;
+  margin-left: 775px;
+}
+
+.arrowIcon {
+  color: #001eb9;
+  font-size: 24px;
+}
+
+.addProducts {
+  font-family: "Satoshi";
+}
+
+.primary-text-med {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  color: #162427;
+}
+
+.sec-text-med {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #162427;
+
+  opacity: 0.5;
+}
+
+.form-control {
+  width: 400px;
+  height: 45px;
+  margin-left: 44px;
+  top: 235px;
+  background: #f7f7f7;
+  border-radius: 5px;  
+}
+
+.description {
+  height: 105px;
+  margin-left: 0px;
+  top: 235px;
+  background: #f7f7f7;
+  border-radius: 5px;
+  border-color: #f7f7f7;
+}
+
+.right-side-fields {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  color: #162427;
+  margin-left: 165px;
+  -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

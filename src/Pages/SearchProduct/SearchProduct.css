@@ -1,0 +1,84 @@
+.search-results-table {
+  position: absolute;
+  width: 70%;
+  height: 600px;
+  margin-left: 20%;
+  margin-right: 10%;
+  top: 330px;
+}
+
+.searchProductResults {
+  font-family: "Satoshi";
+}
+
+.sec-titles {
+position: absolute;
+width: 400px;
+height: 32px;
+margin-left: 15%;
+top: 280px;
+
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: 0.08em;
+
+color: #162427;
+
+opacity: 0.5;
+}
+
+.chevron-right-icon {
+  color: #001eb9;
+  margin-left: 60%;
+}
+
+.sku-result-style {
+  /* position: absolute;
+  left: 0%;
+  right: 95.38%;
+  top: 0%;
+  bottom: 77.65%; */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  /* margin-bottom: 25px; */
+
+  color: #001EB9;
+}
+
+.product-name-result {
+  /* position: absolute;
+  width: 128px;
+  height: 26px;
+  left: 0px;
+  top: 29px; */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  margin-top: 20px;
+
+  color: #162427;
+}
+
+.description-result{
+  /* position: absolute;
+  left: 0%;
+  right: 40.38%;
+  top: 60px;
+  bottom: 0%;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px; */
+
+  color: #162427;
+  
+  opacity: 0.5;
+}
